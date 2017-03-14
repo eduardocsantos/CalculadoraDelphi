@@ -1,0 +1,112 @@
+unit UntPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Samples.Spin;
+
+type
+  TForm1 = class(TForm)
+    SpinEdit1: TSpinEdit;
+    SpinEdit2: TSpinEdit;
+    SpinEdit3: TSpinEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+// 1 FUN플O = SOMAR ############
+
+procedure TForm1.Button1Click(Sender: TObject);
+// Crio VARIAVEIS
+var
+  Num1, Num2, Resultado :Integer;
+begin
+// Num1 e Num 2 RECEBENDO VALORES do SPINEDIT
+  Num1 := SpinEdit1.Value;
+  Num2 := SpinEdit2.Value;
+
+  Resultado := Num1 + Num2;
+  SpinEdit3.Value := Resultado;
+end;
+
+
+
+// 2 FUN플O = SUBTRAIR ############
+procedure TForm1.Button2Click(Sender: TObject);
+// CRIO VARIAEIS
+var
+  Num1, Num2, Resultado : Integer;
+begin
+// Num1 e Num 2 RECEBENDO VALORES do SPINEDIT
+  Num1 := SpinEdit1.Value;
+  Num2 := SpinEdit2.Value;
+
+  Resultado := Num1 - Num2;
+  SpinEdit3.Value := Resultado;
+end;
+
+// 3 FUN플O = MULTIPLICA플O ##########
+procedure TForm1.Button3Click(Sender: TObject);
+var
+  Num1, Num2, Resultado : Integer;
+begin
+  Num1 := SpinEdit1.Value;
+  Num2:= SpinEdit2.Value;
+
+  Resultado := Num1 * Num2;
+  SpinEdit3.Value := Resultado;
+
+end;
+
+
+// 4 FUN플O = DIVIS홒 ##########
+procedure TForm1.Button4Click(Sender: TObject);
+var
+  Num1, Num2, Resultado : Integer;
+begin
+  Num1 := SpinEdit1.Value;
+  Num2 := SpinEdit2.Value;
+
+  Resultado := Num1 div Num2;
+  SpinEdit3.Value := Resultado;
+end;
+
+
+
+procedure TForm1.Button5Click(Sender: TObject);
+var
+  Num1, Num2:Integer;
+  Resultado:Double;
+begin
+  Num1 := SpinEdit1.Value;
+  Num2 := SpinEdit2.Value;
+
+  Resultado := Num1/Num2;
+
+  SpinEdit3.Value := StrToInt(Resultado.ToString);
+end;
+
+end.
